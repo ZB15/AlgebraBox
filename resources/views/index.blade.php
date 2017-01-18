@@ -4,7 +4,9 @@
 
 @section('content')
 <div class="row">
-    <div class="jumbotron">
+    <div class="jumbotron" style="text-align: center;
+">
+<img src="{!!asset('images/algebra-box-logo.png')!!}"/>
         <h1>AlgebraBox</h1>
         <h2>The greatest cloud storage</h2>
         <p>You must login or create account to continue.</p>
