@@ -82,19 +82,15 @@ class RegistrationController extends Controller
             }
         );
 		
-<<<<<<< HEAD
+
 		
 
-		//Hashirana mapa nakon registracije
-		$hashed_map = sha1('$result->user->email');
-        File::makeDirectory(base_path("storage/app/public/usermaps/$year-$hashed_map"), 0755, true, true);
-		// return $user;
-=======
+	
 		// Kreira root mapu za svakog korisnika prilikom registracije
 		
 		$hashedMap = Hash::make('$result->user->id');
-		File::makeDirectory(base_path("storage/app/maps/users_$hashedMap"), 0755, true, true);
->>>>>>> 9819bb57b9d4bb1066aa92fb5ed07e57066f9499
+		File::makeDirectory(base_path("app/maps/users_$hashedMap"), 0755, true, true);
+
 		
         // Ask the user to check their email for the activation link
         $result->setMessage('Registration complete.  Please check your email for activation instructions.');
