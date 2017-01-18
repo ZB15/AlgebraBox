@@ -78,6 +78,8 @@ class RegistrationController extends Controller
                     ->subject('Your account has been created');
             }
         );
+		
+		
 
         // Ask the user to check their email for the activation link
         $result->setMessage('Registration complete.  Please check your email for activation instructions.');
