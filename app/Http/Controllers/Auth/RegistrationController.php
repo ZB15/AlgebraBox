@@ -39,7 +39,6 @@ class RegistrationController extends Controller
     {
         return view('auth.register');
 		
-
     }
 
     /**
@@ -85,14 +84,9 @@ class RegistrationController extends Controller
             }
         );
 		
-
 		// Kreira root mapu za svakog korisnika prilikom registracije
 		
 		$hashedMap = Hash::make('$result->user->id');
-
-		File::makeDirectory(storage_path("app/maps/user_$hashedMap"), 0755, true, true);
-
-
 		
 		File::makeDirectory(storage_path("app/maps/user_$hashedMap"), 0755, true, true);
 		
@@ -104,17 +98,8 @@ class RegistrationController extends Controller
 		$map->users_id = $result->user->id;
 		
 		$map->save();
-
 		
-		//pospremi id korisnika id i ime mape u bazu
-		
-		$map=new UserMap();
-		$map->name=$hashedMap;
-		$map->users_id=$result->user->id;
-		$map->save();
-
-		
-		 // Ask the user to check their email for the activation link
+        // Ask the user to check their email for the activation link
         $result->setMessage('Registration complete.  Please check your email for activation instructions.');
 
         // There is no need to send the payload data to the end user
