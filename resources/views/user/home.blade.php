@@ -12,7 +12,7 @@
 	<div class="col-md-3">
 		<div class="list-group">
 			<a href="#" class="list-group-item active">Folders &amp; Files </a>
-			<a href="{{route('categories')}}" class="list-group-item">Categories</a>
+			<a href="{{route('categories.index')}}" class="list-group-item">Categories</a>
 			<a href="#" class="list-group-item">Shared</a>
 		</div>	
 	</div>
