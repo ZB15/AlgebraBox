@@ -70,6 +70,30 @@
                             roles.delete
                         </label>
                     </div>
+					<div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="permissions[categories.create]" value="1" {{ $role->hasAccess('categories.create') ? 'checked' : '' }}>
+                            categories.create
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="permissions[categories.update]" value="1" {{ $role->hasAccess('categories.update') ? 'checked' : '' }}>
+                            categories.update
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="permissions[categories.view]" value="1" {{ $role->hasAccess('categories.view') ? 'checked' : '' }}>
+                            categories.view
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="permissions[categories.delete]" value="1" {{ $role->hasAccess('categories.delete') ? 'checked' : '' }}>
+                            categories.delete
+                        </label>
+                    </div>
                     <input name="_token" value="{{ csrf_token() }}" type="hidden">
                     <input name="_method" value="PUT" type="hidden">
                     <input class="btn btn-lg btn-primary btn-block" type="submit" value="Update">

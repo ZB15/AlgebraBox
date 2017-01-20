@@ -7,6 +7,16 @@ use App\Http\Controllers\Controller;
 
 class CategoriesController extends Controller
 {
+	
+	public function __construct()
+    {
+        // Middleware
+        $this->middleware('sentinel.auth');
+        $this->middleware('sentinel.access:categories.create', ['only' => ['create', 'store']]);
+        $this->middleware('sentinel.access:categories.view', ['only' => ['index', 'show']]);
+        $this->middleware('sentinel.access:categories.update', ['only' => ['edit', 'update']]);
+        $this->middleware('sentinel.access:categories.destroy', ['only' => ['destroy']]);
+    }
     /**
      * Display a listing of the resource.
      *

@@ -70,6 +70,30 @@
                             roles.delete
                         </label>
                     </div>
+					<div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="permissions[categories.create]" value="1">
+                            categories.create
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="permissions[categories.update]" value="1">
+                            categories.update
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="permissions[categories.view]" value="1">
+                            categories.view
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="permissions[categories.delete]" value="1">
+                            categories.delete
+                        </label>
+                    </div>
                     <input name="_token" value="{{ csrf_token() }}" type="hidden">
                     <input class="btn btn-lg btn-primary btn-block" type="submit" value="Create">
                 </fieldset>
