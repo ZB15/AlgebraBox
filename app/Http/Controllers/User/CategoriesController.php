@@ -1,9 +1,13 @@
 <?php
 
 namespace App\Http\Controllers\User;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Centaur\AuthManager;
 use App\Http\Controllers\Controller;
+use Auth;
+use App\Models\Category;
+use Sentinel;
 
 class CategoriesController extends Controller
 {
@@ -24,7 +28,9 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        return view('user.categories.index');
+		$user = Sentinel::getUser();
+		$categories = DB::table('categories')->where('user_id', $user->id)->get();	
+		return view('user.categories.index')->with('categories', $categories);
     }
 
     /**
@@ -32,10 +38,25 @@ class CategoriesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function postCreate(Request $request)
     {
-        return view('user.categories.create');
+		$name =  $request->input('name');
+		$user = Sentinel::getUser();
+		
+		$cat = new Category;
+
+        $cat->name = $name;
+		$cat->user_id = $user->id;
+
+        $cat->save();
+
+		$categories = DB::table('categories')->where('user_id', $user->id)->get();	
+		return view('user.categories.index')->with('categories', $categories);
     }
+	
+	public function getcreate() {
+		return view('user.categories.new');
+	}
 
     /**
      * Store a newly created resource in storage.
@@ -67,7 +88,8 @@ class CategoriesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $post=Post::findOrFail($id);
+		return view('user.categories.edit',compact('post'));
     }
 
     /**

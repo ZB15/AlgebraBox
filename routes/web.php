@@ -17,9 +17,11 @@ Route::get('/', ['as' => 'index', 'uses' => 'IndexController@index']);
 Route::get('home', ['as' => 'home', 'uses' => 'User\HomeController@index']);
 
 //Categories page
-Route::group(['prefix' => 'user'], function () {
-  Route::resource('categories', 'User\CategoriesController');
-});
+
+Route::get('user/categories/new', ['as' => 'user.categories.new', 'uses' => 'User\CategoriesController@getcreate']);
+Route::post('user/categories/create', ['as' => 'user.categories.create', 'uses' => 'User\CategoriesController@postCreate']);
+Route::get('user/categories/index', ['as' => 'categories.index', 'uses' => 'User\CategoriesController@index']);
+
 // Authorization
 Route::get('login', ['as' => 'auth.login.form', 'uses' => 'Auth\SessionController@getLogin']);
 Route::post('login', ['as' => 'auth.login.attempt', 'uses' => 'Auth\SessionController@postLogin']);
