@@ -7,11 +7,12 @@
   <ol class="breadcrumb">
     <li class="active">Home</li>
   </ol>
+  
 </div>
 <div class="row">
 	<div class="col-md-3">
 		<div class="list-group">
-			<a href="{{route('home')}}" class="list-group-item">Categories &amp; Files </a>
+			<a href="{{route('home')}}" class="list-group-item">Folders &amp; Files </a>
 			<a class="list-group-item active">Categories</a>
 			<a href="#" class="list-group-item">Shared</a>
 		</div>	
@@ -30,7 +31,9 @@
 			<div class="panel-body">
 				<ul>
 					@foreach ($categories as $cat)
-						<li>{{ $cat->name }}</li>
+						<li>
+						{{ $cat->name }}
+						</li>
 					@endforeach
 				</ul>
 			</div>
