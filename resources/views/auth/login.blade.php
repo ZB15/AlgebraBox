@@ -4,10 +4,10 @@
 
 @section('content')
 <div class="row">
-    <div class="col-md-4 col-md-offset-4">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">Login</h3>
+    <div>
+        <div class="login-panel">
+            <div class="login-logo">
+                <img src="{!!asset('images/Algebra-BOX-logo.png')!!}"/>
             </div>
             <div class="panel-body">
                 <form accept-charset="UTF-8" role="form" method="post" action="{{ route('auth.login.attempt') }}">
@@ -26,12 +26,17 @@
                         </label>
                     </div>
                     <input name="_token" value="{{ csrf_token() }}" type="hidden">
-                    <input class="btn btn-lg btn-primary btn-block" type="submit" value="Login">
-                    <p style="margin-top:5px; margin-bottom:0"><a href="{{ route('auth.password.request.form') }}" type="submit">Forgot your password?</a></p>
-                </fieldset>
+                    <input class="btn login-btn-box background-green" type="submit" value="Login">
+					<div class="login-bottom">
+						<p class="btn login-btn-box background-orange"><a class="color-ff" href="{{ route('auth.password.request.form') }}" type="submit">Forgot your password?</a></p>
+						<p class="btn login-btn-box background-blue"><a class="color-ff" href="{{ route('auth.register.form') }}" type="submit">REGISTER</a></p>
+					</div>
+				</fieldset>
                 </form>
             </div>
         </div>
     </div>
 </div>
+
+
 @stop

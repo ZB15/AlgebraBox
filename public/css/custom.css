@@ -1,0 +1,346 @@
+@font-face {
+    font-family: 'fashion_-_italicfashionIt';
+    src: url('../font/Fashion - Italic-webfont.eot');
+    src: url('../font/Fashion - Italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/Fashion - Italic-webfont.woff2') format('woff2'),
+         url('../font/Fashion - Italic-webfont.woff') format('woff'),
+         url('../font/Fashion - Italic-webfont.ttf') format('truetype'),
+         url('../font/Fashion - Italic-webfont.svg#fashion_-_italicfashionIt') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'fashion_-regularfashionRg';
+    src: url('../font/Fashion -Regular-webfont.eot');
+    src: url('../font/Fashion -Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/Fashion -Regular-webfont.woff2') format('woff2'),
+         url('../font/Fashion -Regular-webfont.woff') format('woff'),
+         url('../font/Fashion -Regular-webfont.ttf') format('truetype'),
+         url('../font/Fashion -Regular-webfont.svg#fashion_-regularfashionRg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+/*
+|--------------------------------------------------------------------------
+| GLOBAL
+|--------------------------------------------------------------------------
+|
+*/ 
+
+    :root {
+        font-size: 10px!important;
+		
+    }
+    
+    
+    body * {
+        font-size:1.6rem;
+        line-height:140%;
+		font-family: 'fashion_-regularfashionRg';
+    }
+    
+    h1
+        {font-size:3rem;}
+    
+    h2
+        {font-size:2.4rem;}
+    
+    h3
+        {font-size:2.2rem;}
+    
+    h4
+        {font-size:2rem;}
+    
+    
+    .font-22{
+        font-size:2.2rem;
+    }
+    
+    .font-28{
+        font-size:2.8rem;
+    }
+    
+    .font-48{
+        font-size: 4.8rem;
+    }
+    
+	.float-left {
+		width:50%
+	}
+	
+	.float-rightm {
+		float:right:
+	}
+
+/*
+|--------------------------------------------------------------------------
+| FLEX
+|--------------------------------------------------------------------------
+|
+*/
+
+
+    .flex{
+        display:flex;
+        flex-wrap: wrap;
+    }
+    
+    .space-between{
+        justify-content:space-between
+    }
+    
+    .space-around{
+        justify-content:space-around
+    }
+    
+    
+    .align-center{
+        align-items:center
+    }
+    
+    .flex-center{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+    }
+        
+     .flex-jf-end{
+         justify-content: flex-end;
+    }
+   
+   
+/*
+|--------------------------------------------------------------------------
+| COLOR
+|--------------------------------------------------------------------------
+|
+*/
+/**
+ * orange #eb5a2d
+ * blue   #4B63C9
+ * green  #76BE34
+ *
+ */
+ 
+	.background-green {
+		background-color:#76BE34;
+		color:#ffffff;
+	}
+	
+	.background-blue {
+		background-color:#4B63C9;
+		color:#ffffff;
+	}
+	
+	.background-orange {
+		background-color:#eb5a2d;
+		color:#ffffff;
+	}
+	
+	a {
+		color:#eb5a2d;
+	}
+
+	.color-ff {
+		color:#ffffff;
+	}
+	
+	.color-ff:hover {
+		color: #444;
+		text-decoration: none;
+	}
+	
+	#options-btn {
+		border-radius: 0;
+		margin: 0 15px;
+	}
+/*
+|--------------------------------------------------------------------------
+| GRID
+|--------------------------------------------------------------------------
+|
+*/
+
+	a.navbar-brand {
+		padding-top: 4px;
+	}
+ 
+	 a.admin-navbar-brand {
+		padding: 5px;
+		display: inline-block;
+		font-size: 30px;
+	}
+ 
+ /*
+|--------------------------------------------------------------------------
+| LOGIN / REGISTER Forma
+|--------------------------------------------------------------------------
+|
+*/
+
+	.login-btn a{
+		padding: 20px 50px;
+		font-size: 30px;
+	}
+	
+	.login-btn-box {
+		width: 100%;
+		border-radius: 0;
+		padding: 15px;
+		font-size: 20px;
+	}
+
+	.login-bottom p {
+		width: 50%;
+		float: left;
+		margin-top: 10px;
+	}
+	
+	.login-logo {
+		text-align:center
+	}
+	
+	.login-logo img {
+		width:50%
+	}
+	
+	
+	
+	.form {
+		position: relative;
+		z-index: 1;
+		background: #FFFFFF;
+		max-width: 300px;
+		margin: 0 auto 100px;
+		padding: 30px;
+		border-top-left-radius: 3px;
+		border-top-right-radius: 3px;
+		border-bottom-left-radius: 3px;
+		border-bottom-right-radius: 3px;
+		text-align: center;
+	}
+
+	.form-control {
+		outline: 0;
+		background: #faffbd;
+		width: 100%;
+		border: 0;
+		margin: 0 0 15px;
+		padding: 15px;
+		border-top-left-radius: 3px;
+		border-top-right-radius: 3px;
+		border-bottom-left-radius: 3px;
+		border-bottom-right-radius: 3px;
+		box-sizing: border-box;
+		font-size: 14px;
+		height: 50px;
+	}
+	
+	
+	.form button {
+		outline: 0;
+		background: #EF3B3A;
+		width: 100%;
+		border: 0;
+		padding: 15px;
+		border-top-left-radius: 3px;
+		border-top-right-radius: 3px;
+		border-bottom-left-radius: 3px;
+		border-bottom-right-radius: 3px;
+		color: #FFFFFF;
+		font-size: 14px;
+		-webkit-transition: all 0.3 ease;
+		transition: all 0.3 ease;
+		cursor: pointer;
+	}
+	.form .message {
+		margin: 15px 0 0;
+		color: #b3b3b3;
+		font-size: 12px;
+	}
+	.form .message a {
+		color: #EF3B3A;
+		text-decoration: none;
+	}
+	.form .register-form {
+		display: none;
+	}
+
+	.login-panel {
+		max-width: 350px;
+		margin: 0 auto;
+	}
+
+	#user-search .form-control{
+		height: 35px;
+	}
+	
+	div#user-file {
+		padding: 5px;
+	}
+	
+	div#user-file:nth-child(odd) {
+		background: rgb(254, 245, 242);
+	}
+/*
+|--------------------------------------------------------------------------
+| INNER CONTENT
+|--------------------------------------------------------------------------
+|
+*/
+
+/**
+ * User info
+ *
+ */
+ 
+	p.user-gravatar{
+		text-align: center;
+	}
+	
+	p.user-gravatar img{
+		width:70%;
+	}
+	
+/**
+ * Status
+ *
+ */
+	.status-info h3 {
+	    border-bottom: 1px solid #eb5a2d;
+		margin-bottom: 10px;
+	}
+	
+	.status-info table {
+		width: 100%;
+	}
+
+	p.user-status-info {
+		padding-left: 45px;
+	}
+/**
+ * Folders
+ *
+ */
+	.folder-info {
+		border: 1px solid #efefef;
+		margin-top: 20px;
+		padding: 10px;
+		text-align: center;
+	}
+	
+	.dropdown, .dropup {
+		position: relative;
+		width: 100px;
+		float: left;
+	}

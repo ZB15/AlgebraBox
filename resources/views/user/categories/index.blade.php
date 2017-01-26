@@ -3,13 +3,17 @@
 @section('title', 'AlgebraBox | The greatest cloud storage')
 
 @section('content')
+
+@include('user.categories.status')
+
 <div class="row">
   <ol class="breadcrumb">
     <li class="active">Home</li>
   </ol>
   
 </div>
-<div class="row">
+
+<div class="categories" class="row">	
 	<div class="col-md-3">
 		<div class="list-group">
 			<a href="{{route('home')}}" class="list-group-item">Folders &amp; Files </a>
@@ -28,7 +32,9 @@
 					</a>
 				</div>
 			</div>
+
 			<div class="panel-body">
+<<<<<<< HEAD
 				<ul>
 					@foreach ($categories as $cat)
 						<li>
@@ -36,8 +42,48 @@
 						</li>
 					@endforeach
 				</ul>
+=======
+				<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Category name</th>
+        <th>Section</th>
+		<th></th>
+      </tr>
+    </thead>
+    <tbody>
+		
+		
+	@foreach($categories as $category)
+
+			
+			
+      <tr>
+        <td>{{ $category->id }}</td>
+		 <td>{{ $category->name }}</td>
+		  <td>{{ $category->sections->name }}</td>
+		  <td>
+		  <span class="label label-success">Edit</span>
+		  <span class="label label-danger">Delete</span> 
+		  </td>
+		  
+        <td>
+		</td>
+        <td></td>
+      </tr>
+	  
+	@endforeach
+      
+    </tbody>
+  </table>
+			<div>
+				
+>>>>>>> c9908752499ed7431b9e3d84009ef9bcd9508bcf
 			</div>
 		</div>
 	</div>
 </div>
+
+
 @stop

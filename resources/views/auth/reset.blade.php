@@ -4,11 +4,11 @@
 
 @section('content')
 <div class="row">
-    <div class="col-md-4 col-md-offset-4">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">Reset Your Password</h3>
-            </div>
+    <div>
+        <div class="login-panel">
+            <div class="login-logo">
+                <img src="{!!asset('images/Algebra-BOX-logo.png')!!}"/>
+            </div
             <div class="panel-body">
                 <form accept-charset="UTF-8" role="form" method="post" action="{{ route('auth.password.request.attempt') }}">
                 <fieldset>
@@ -17,7 +17,7 @@
                         {!! ($errors->has('email') ? $errors->first('email', '<p class="text-danger">:message</p>') : '') !!}
                     </div>
                     <input name="_token" value="{{ csrf_token() }}" type="hidden">
-                    <input class="btn btn-lg btn-primary btn-block" type="submit" value="Help!">
+                    <input class="btn login-btn-box background-green" type="submit" value="Help!">
                 </fieldset>
                 </form>
             </div>

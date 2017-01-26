@@ -1,25 +1,37 @@
 <?php
 
 namespace App\Http\Controllers\User;
+<<<<<<< HEAD
 use Illuminate\Support\Facades\DB;
+=======
+use Session;
+use Sentinel;
+>>>>>>> c9908752499ed7431b9e3d84009ef9bcd9508bcf
 use Illuminate\Http\Request;
 use Centaur\AuthManager;
 use App\Http\Controllers\Controller;
+<<<<<<< HEAD
 use Auth;
 use App\Models\Category;
 use Sentinel;
+=======
+use App\Models\Sections;
+use App\Models\Categories;
+use App\Models\Users;
+use App\Models\CategorieUser;
+
+
+>>>>>>> c9908752499ed7431b9e3d84009ef9bcd9508bcf
 
 class CategoriesController extends Controller
 {
+	
 	
 	public function __construct()
     {
         // Middleware
         $this->middleware('sentinel.auth');
-        $this->middleware('sentinel.access:categories.create', ['only' => ['create', 'store']]);
-        $this->middleware('sentinel.access:categories.view', ['only' => ['index', 'show']]);
-        $this->middleware('sentinel.access:categories.update', ['only' => ['edit', 'update']]);
-        $this->middleware('sentinel.access:categories.destroy', ['only' => ['destroy']]);
+
     }
     /**
      * Display a listing of the resource.
@@ -27,10 +39,19 @@ class CategoriesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
+	
     {
+<<<<<<< HEAD
 		$user = Sentinel::getUser();
 		$categories = DB::table('categories')->where('user_id', $user->id)->get();	
 		return view('user.categories.index')->with('categories', $categories);
+=======
+		
+		$categories = Categories::all();
+		
+		
+        return view('user.categories.index', ['categories' => $categories]);
+>>>>>>> c9908752499ed7431b9e3d84009ef9bcd9508bcf
     }
 
     /**
@@ -40,6 +61,7 @@ class CategoriesController extends Controller
      */
     public function postCreate(Request $request)
     {
+<<<<<<< HEAD
 		$name =  $request->input('name');
 		$user = Sentinel::getUser();
 		
@@ -52,6 +74,12 @@ class CategoriesController extends Controller
 
 		$categories = DB::table('categories')->where('user_id', $user->id)->get();	
 		return view('user.categories.index')->with('categories', $categories);
+=======
+		
+    	$sections = sections::all();
+		
+        return view('user.categories.create', ['sections' => $sections]);
+>>>>>>> c9908752499ed7431b9e3d84009ef9bcd9508bcf
     }
 	
 	public function getcreate() {
@@ -66,7 +94,31 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+		
+		
+		
+		
+		
+		 // Unos u tablicu categories
+        $categories = new Categories();
+        $categories->name = $request->name;
+		$categories->sections_id = $request->sections_id;
+        $categories->save();
+		
+		// Unos u pivot tablicu users_categories
+		
+	    $user = Sentinel::getUser()->id;
+		
+		$users_categories = new CategorieUser();
+		$users_categories->user_id = $user;
+		$users_categories->categorie_id = $categories->id;
+		$users_categories->save();
+		
+		
+		// return na list
+		
+      
+       return redirect()->route('categories.index');
     }
 
     /**
