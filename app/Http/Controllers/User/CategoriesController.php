@@ -1,27 +1,27 @@
 <?php
 
 namespace App\Http\Controllers\User;
-<<<<<<< HEAD
+
 use Illuminate\Support\Facades\DB;
-=======
+
 use Session;
 use Sentinel;
->>>>>>> c9908752499ed7431b9e3d84009ef9bcd9508bcf
+
 use Illuminate\Http\Request;
 use Centaur\AuthManager;
 use App\Http\Controllers\Controller;
-<<<<<<< HEAD
+
 use Auth;
 use App\Models\Category;
 use Sentinel;
-=======
+
 use App\Models\Sections;
 use App\Models\Categories;
 use App\Models\Users;
 use App\Models\CategorieUser;
 
 
->>>>>>> c9908752499ed7431b9e3d84009ef9bcd9508bcf
+
 
 class CategoriesController extends Controller
 {
@@ -41,17 +41,17 @@ class CategoriesController extends Controller
     public function index()
 	
     {
-<<<<<<< HEAD
+
 		$user = Sentinel::getUser();
 		$categories = DB::table('categories')->where('user_id', $user->id)->get();	
 		return view('user.categories.index')->with('categories', $categories);
-=======
+
 		
 		$categories = Categories::all();
 		
 		
         return view('user.categories.index', ['categories' => $categories]);
->>>>>>> c9908752499ed7431b9e3d84009ef9bcd9508bcf
+
     }
 
     /**
@@ -61,7 +61,7 @@ class CategoriesController extends Controller
      */
     public function postCreate(Request $request)
     {
-<<<<<<< HEAD
+
 		$name =  $request->input('name');
 		$user = Sentinel::getUser();
 		
@@ -74,12 +74,12 @@ class CategoriesController extends Controller
 
 		$categories = DB::table('categories')->where('user_id', $user->id)->get();	
 		return view('user.categories.index')->with('categories', $categories);
-=======
+
 		
     	$sections = sections::all();
 		
         return view('user.categories.create', ['sections' => $sections]);
->>>>>>> c9908752499ed7431b9e3d84009ef9bcd9508bcf
+
     }
 	
 	public function getcreate() {
@@ -94,10 +94,6 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
-		
-		
-		
-		
 		
 		 // Unos u tablicu categories
         $categories = new Categories();
@@ -117,7 +113,7 @@ class CategoriesController extends Controller
 		
 		// return na list
 		
-      
+       session()->flash('success', "New category '{$categories->name}' has been created.");
        return redirect()->route('categories.index');
     }
 
@@ -129,7 +125,7 @@ class CategoriesController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
@@ -140,8 +136,14 @@ class CategoriesController extends Controller
      */
     public function edit($id)
     {
+
         $post=Post::findOrFail($id);
 		return view('user.categories.edit',compact('post'));
+
+		$categories = Categories::find($id);
+		$sections = Sections::all();
+        return view('user.categories.edit', compact('categories', 'sections')); 
+
     }
 
     /**
@@ -153,7 +155,17 @@ class CategoriesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
+
+		$categories = Categories::find($id);
+		$categories->name = $request->name;
+		$categories->sections_id = $request->sections_id;
+		$categories->save();
+		
+      
+      
+      //redirect page after save data
+      return redirect()->route('categories.index');
     }
 
     /**
@@ -164,6 +176,12 @@ class CategoriesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // delete
+        $categories = Categories::find($id);
+        $categories->delete();
+
+        // redirect
+		session()->flash('success', "Category '{$categories->name}' has been deleted.");
+        return redirect()->route('categories.index');
     }
 }

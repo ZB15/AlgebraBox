@@ -1,0 +1,70 @@
+/*
+|--------------------------------------------------------------------------
+| LOG
+|--------------------------------------------------------------------------
+|
+*/
+
+
+
+/**
+ * 23.1.2017.
+ *
+ */
+ 
+
+	add folder
+	https://github.com/tkescec/AlgebraBox/commit/a8724133b5fa619a0bad4627c371ccceb6975caa
+	
+	front v 1.5 backend v 1.1
+	https://github.com/tkescec/AlgebraBox/commit/df68689f436e3709e22519d5322ee06b7bc1a4be
+
+/**
+ * 23.1.2017.
+ *
+ */
+ 
+	sort, share
+	https://github.com/tkescec/AlgebraBox/commit/ce990dcce9f8a3937639f1c764ca1162b988c711
+
+	folders in categories
+	https://github.com/tkescec/AlgebraBox/commit/f840348a304e2aa89a6670c88330c4bd49f7132b
+	
+	
+/**
+ * 22.1.2017.
+ *
+ */
+	front, backend
+	https://github.com/tkescec/AlgebraBox/commit/bd0e8dba1ae5dc154710bbf271ff55bccdb3caa4
+ 
+
+/**
+ * 17.1.2017.
+ *
+ */
+
+	logo on front page
+	https://github.com/tkescec/AlgebraBox/commit/cbdf93bdba49e649bac2c995f644b9a007756b40	
+	
+	Migracija tablica routes_map
+	https://github.com/tkescec/AlgebraBox/commit/72bfdd61c7e396083387b4553ea91a936cd85cb6
+
+	
+/**
+ * 18.1.2017.
+ *
+ */
+ 
+	front v1.2
+	https://github.com/tkescec/AlgebraBox/commit/d06ca311004f890e19ca2e5a195f41fc402dd6bd
+	
+	
+	 
+ 
+/**
+ * 4.12.2016.
+ *
+ */
+ 
+	Kreirano i napravljen kostur

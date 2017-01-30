@@ -43,29 +43,41 @@
     }
     
     
-    body * {
+    body {
         font-size:1.6rem;
         line-height:140%;
 		font-family: 'fashion_-regularfashionRg';
+		background-color: #efefef;
     }
     
     h1
-        {font-size:3rem;}
+        {font-size:10rem;}
     
     h2
-        {font-size:2.4rem;}
+        {font-size:4rem;}
     
     h3
         {font-size:2.2rem;}
     
-    h4
-        {font-size:2rem;}
+    h4 {
+		font-size: 2rem;
+		padding: 15px 5px;
+		margin: 0;
+	}
     
-    
-    .font-22{
-        font-size:2.2rem;
+    h5 {
+		font-size: 18px;
+		padding: 5px 10px 6px;
+	}
+
+    .font-2{
+        font-size:2rem;
+		padding: 6px 3px;
     }
-    
+	
+	button#options-btn.font-2 {
+		margin: 0;
+	}
     .font-28{
         font-size:2.8rem;
     }
@@ -74,14 +86,25 @@
         font-size: 4.8rem;
     }
     
-	.float-left {
-		width:50%
-	}
-	
-	.float-rightm {
-		float:right:
+
+
+	.flat-btn {
+		margin: 0;
 	}
 
+	.flat-btn a {
+		border-radius: 0;
+		min-width: 300px;
+	}
+	
+	.login-row {
+		width: 450px;
+		margin: 50px auto;
+	}
+
+	.alert {
+    border-radius: 0;
+}
 /*
 |--------------------------------------------------------------------------
 | FLEX
@@ -126,29 +149,30 @@
 |
 */
 /**
- * orange #eb5a2d
- * blue   #4B63C9
- * green  #76BE34
- *
+ * orange #f27935
+ * blue   #14b9d6
+ * green  #1fbba6
+ * grey   #9EA7B3
+ * black  #323A45
  */
  
 	.background-green {
-		background-color:#76BE34;
+		background-color:#1fbba6;
 		color:#ffffff;
 	}
 	
 	.background-blue {
-		background-color:#4B63C9;
+		background-color:#14b9d6;
 		color:#ffffff;
 	}
 	
 	.background-orange {
-		background-color:#eb5a2d;
+		background-color:#f27935;
 		color:#ffffff;
 	}
 	
 	a {
-		color:#eb5a2d;
+		color:#f27935;
 	}
 
 	.color-ff {
@@ -171,6 +195,13 @@
 |
 */
 
+	.navbar {
+		position: relative;
+		min-height: 50px;
+		margin-bottom: 0;
+		border: 0;
+	}
+
 	a.navbar-brand {
 		padding-top: 4px;
 	}
@@ -180,13 +211,35 @@
 		display: inline-block;
 		font-size: 30px;
 	}
+	
+	.statistic-body .col-md-4,
+	.user-data .col-md-9,
+	.user-data .col-md-3,
+	.user-data .col-md-9{
+		padding: 0 0 20px;
+	}
  
+	.user-data .col-md-4{
+		padding: 0;
+	}
+ 
+
+	.list-file {
+		padding-left: 0;
+		border-bottom: 1px solid #9ea7b3;
+	}
  /*
 |--------------------------------------------------------------------------
 | LOGIN / REGISTER Forma
 |--------------------------------------------------------------------------
 |
 */
+
+	.login {
+		text-align:center;
+		background-color: #fff;
+		padding: 50px 0;
+	}
 
 	.login-btn a{
 		padding: 20px 50px;
@@ -203,7 +256,6 @@
 	.login-bottom p {
 		width: 50%;
 		float: left;
-		margin-top: 10px;
 	}
 	
 	.login-logo {
@@ -215,7 +267,14 @@
 	}
 	
 	
-	
+	input:-webkit-autofill, 
+	textarea:-webkit-autofill, 
+	select:-webkit-autofill {
+		background-color: #fff!important;
+		background-image: none!important;
+		color: #333!important;
+	}
+
 	.form {
 		position: relative;
 		z-index: 1;
@@ -223,26 +282,21 @@
 		max-width: 300px;
 		margin: 0 auto 100px;
 		padding: 30px;
-		border-top-left-radius: 3px;
-		border-top-right-radius: 3px;
-		border-bottom-left-radius: 3px;
-		border-bottom-right-radius: 3px;
+		border-radius: 0;
+
 		text-align: center;
 	}
 
 	.form-control {
 		outline: 0;
-		background: #faffbd;
+		background-color: #fff;
 		width: 100%;
 		border: 0;
 		margin: 0 0 15px;
-		padding: 15px;
-		border-top-left-radius: 3px;
-		border-top-right-radius: 3px;
-		border-bottom-left-radius: 3px;
-		border-bottom-right-radius: 3px;
+		#padding: 15px;
+		border-radius: 0;
 		box-sizing: border-box;
-		font-size: 14px;
+		font-size: 18px;
 		height: 50px;
 	}
 	
@@ -253,10 +307,7 @@
 		width: 100%;
 		border: 0;
 		padding: 15px;
-		border-top-left-radius: 3px;
-		border-top-right-radius: 3px;
-		border-bottom-left-radius: 3px;
-		border-bottom-right-radius: 3px;
+		border-radius: 0;
 		color: #FFFFFF;
 		font-size: 14px;
 		-webkit-transition: all 0.3 ease;
@@ -292,12 +343,26 @@
 	div#user-file:nth-child(odd) {
 		background: rgb(254, 245, 242);
 	}
+	
+	
 /*
 |--------------------------------------------------------------------------
 | INNER CONTENT
 |--------------------------------------------------------------------------
 |
 */
+
+
+/**
+ * Statistika header
+ *
+ */
+
+	div#statistic,
+	.user-data {
+		background: #fff;
+	}
+
 
 /**
  * User info
@@ -309,16 +374,30 @@
 	}
 	
 	p.user-gravatar img{
-		width:70%;
+		width:72%;
 	}
 	
 /**
  * Status
  *
  */
-	.status-info h3 {
+
+	h3.orange{
 	    border-bottom: 1px solid #eb5a2d;
-		margin-bottom: 10px;
+		padding-bottom: 10px;
+		padding-left: 5px;
+	}
+	
+	h3.blue{
+	    border-bottom: 1px solid #14b9d6;
+		padding-bottom: 10px;
+		padding-left: 5px;
+	}
+	
+	h3.green{
+	    border-bottom: 1px solid #1fbba6;
+		padding-bottom: 10px;
+		padding-left: 5px;
 	}
 	
 	.status-info table {
@@ -327,6 +406,98 @@
 
 	p.user-status-info {
 		padding-left: 45px;
+	}
+	
+
+/**
+ * Breadcrumbs
+ *
+ */	
+	.breadcrumb {
+		padding: 8px 15px;
+		margin-bottom: 0;
+		list-style: none;
+		background-color: #9EA7B3;
+		border-radius: 0;
+		color: #fff;
+	}
+
+	.breadcrumb ol, ul {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+	
+	.breadcrumb>.active {
+		color: #fff;
+	}
+
+	.breadcrumb a {
+		color: #fff;
+	}
+
+	div#user-search {
+		margin-top: -15px;
+		margin-right: -28px;
+	}
+	
+	button.search-btn {
+    padding: 10px 11px 12px;
+    border: 0;
+    border-radius: 0;
+    background: #323a45;
+    color: #fff;
+    margin-right: -2px;
+	}
+
+	form.navbar-form {
+		margin-bottom: 0;
+	}
+	
+/**
+ * Sidebar Folders
+ *
+ */	
+	a.list-group-item, 
+	button.list-group-item {
+		color: #fff;
+	}
+
+	.list-group-item {
+		position: relative;
+		display: block;
+		padding: 10px 15px;
+		margin-bottom: -1px;
+		background-color: #9ea7b3;
+		border: 0;
+	}
+
+	a.list-group-item:focus, 
+	a.list-group-item:hover, 
+	button.list-group-item:focus, 
+	button.list-group-item:hover {
+    color: #fff;
+    text-decoration: none;
+    background-color: #323A45;
+	
+	-webkit-transition: All 0.2s ease;
+    -moz-transition: All 0.2s ease;
+    -o-transition: All 0.2s ease;
+    -ms-transition: All 0.2s ease;
+    transition: All 0.2s ease;
+	}
+	
+	.list-group-item:first-child,
+	.list-group-item:last-child {
+		border-radius: 0;
+	}
+	
+	.list-group-item.active, 
+	.list-group-item.active:focus, 
+	.list-group-item.active:hover {
+		z-index: 2;
+		color: #fff;
+		background-color: #323A45;
+		border-color: #323A45;
 	}
 /**
  * Folders
@@ -344,3 +515,73 @@
 		width: 100px;
 		float: left;
 	}
+	
+	p.btn-edit {
+		margin: 0;
+		padding: 0 0 8px 0!important;
+		text-align: right;
+	}
+	p.btn-edit a {
+		width: 100px;
+		margin: 0 10px;
+		border-radius: 0;
+	}
+
+	h5.orange{
+	    border-bottom: 1px solid #eb5a2d;
+	}
+	
+	h5.blue{
+	    border-bottom: 1px solid #14b9d6;
+	}
+	
+	h5.green{
+	    border-bottom: 1px solid #1fbba6;
+	}
+	
+	.loop-categories p {
+		padding: 10px 5px 10px 20px;
+		border-bottom: 1px solid #9ea7b3;
+	}
+	
+	.create-info select,
+	.create-info input{
+		border: 1px solid #9ea7b3;
+		margin: 20px;
+		width: 90%;
+	}
+	
+	.create-info button {
+		border-radius: 0;
+		padding: 13px 30px;
+		margin-top: 10px;
+		margin-left: 20px;
+	}
+	
+
+/*
+|--------------------------------------------------------------------------
+| ADMIN DIO
+|--------------------------------------------------------------------------
+|
+*/
+	.admin-container {
+		background-color: #fff;
+	}
+	
+	.user-info {
+		padding: 20px;
+		height:230px;
+	}
+	
+	.user-info-inner a{
+		padding: 10px;
+		border: 1px solid #fff;
+		border-radius: 0;
+		width: 80px;
+	}
+	
+	
+	
+	
+	

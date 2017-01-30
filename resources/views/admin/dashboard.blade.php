@@ -3,21 +3,22 @@
 @section('title', 'Admin - Dashboard')
 
 @section('content')
-<link rel="stylesheet" type="text/css" href="{{ asset('css/custom.css') }}">
+
+
 <div class="row">
     @if (Sentinel::check())
     <div class="ejumbotron">
         
         	<div class="col-md-12">
-		<div class="panel panel-default">
+		<div class="panel">
 			<div class="panel-heading clearfix">
-				<h3>STATUS</h3>
+				<h1>STATUS</h1>
 				
 			</div>
 			<div class="panel-body">
 					<div class="col-md-4">
 						<div class="status-info">
-							<h3>BANDWITH</h3>
+							<h3 class="blue"><i class="fa fa-bar-chart" aria-hidden="true"></i> BANDWITH</h3>
 							<p>
 								<table>
 								  <tr>
@@ -42,7 +43,7 @@
 				
 					<div class="col-md-4">
 						<div class="status-info">
-							<h3>USERS</h3>
+							<h3 class="orange"><i class="fa fa-users" aria-hidden="true"></i> USERS</h3>
 							<p>
 								<table class="used-info">
 								  <tr>
@@ -67,7 +68,7 @@
 				
 					<div class="col-md-4">
 						<div class="status-info">
-							<h3>Used Storage</h3>
+							<h3 class="green"><i class="fa fa-folder-open" aria-hidden="true"></i>Used Storage</h3>
 							<p>
 								<table class="used-info">
 								  <tr>
@@ -91,7 +92,7 @@
 				<div class="panel-body">
 					<div class="col-md-4">
 						<div class="status-info">
-							<h3>Overall Usage</h3>
+							<h3 class="blue"><i class="fa fa-server" aria-hidden="true"></i> Overall Usage</h3>
 							<p>
 								<table>
 								  <tr>
@@ -116,7 +117,7 @@
 				
 					<div class="col-md-4">
 						<div class="status-info">
-							<h3>Data</h3>
+							<h3 class="orange"><i class="fa fa-file" aria-hidden="true"></i> Data</h3>
 							<p>
 								<table class="used-info">
 								  <tr>
@@ -141,7 +142,7 @@
 				
 					<div class="col-md-4">
 						<div class="status-info">
-							<h3>Used Storage</h3>
+							<h3 class="green"><i class="fa fa-refresh" aria-hidden="true"></i> Used Storage</h3>
 							<p>
 								<table class="used-info">
 								  <tr>

@@ -25,8 +25,6 @@ Route::get('user/categories/index', ['as' => 'categories.index', 'uses' => 'User
 
 Route::group(['prefix' => 'user'], function () {
   Route::resource('categories', 'User\CategoriesController');
-  Route::post('categories/store', ['uses' => 'User\CategoriesController@store']);
-
 });
 
      
