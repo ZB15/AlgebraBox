@@ -13,7 +13,7 @@ use App\Http\Controllers\Controller;
 
 use Auth;
 use App\Models\Category;
-use Sentinel;
+
 
 use App\Models\Sections;
 use App\Models\Categories;
@@ -38,14 +38,20 @@ class CategoriesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $req)
 	
     {
-
+		$sort = $req->input('sort');
 		$user = Sentinel::getUser();
-		$categories = DB::table('categories')->where('user_id', $user->id)->get();	
-		return view('user.categories.index')->with('categories', $categories);
-
+		$categories = DB::table('categories')->where('user_id', $user->id);
+		if ($sort == 'date') {
+			$categories->orderBy('created_at', 'DESC');
+		}
+		if ($sort == 'type') {
+			$categories->orderBy('name', 'ASC');
+		}
+		$cat = $categories->get();
+		return view('user.categories.index')->with('categories', $cat);
 		
 		$categories = Categories::all();
 		
@@ -142,6 +148,7 @@ class CategoriesController extends Controller
 
 		$categories = Categories::find($id);
 		$sections = Sections::all();
+		
         return view('user.categories.edit', compact('categories', 'sections')); 
 
     }
@@ -156,7 +163,6 @@ class CategoriesController extends Controller
     public function update(Request $request, $id)
     {
         
-
 		$categories = Categories::find($id);
 		$categories->name = $request->name;
 		$categories->sections_id = $request->sections_id;
@@ -181,7 +187,7 @@ class CategoriesController extends Controller
         $categories->delete();
 
         // redirect
-		session()->flash('success', "Category '{$categories->name}' has been deleted.");
+		//session()->flash('success', "Category '{$categories->name}' has been deleted.");
         return redirect()->route('categories.index');
     }
 }

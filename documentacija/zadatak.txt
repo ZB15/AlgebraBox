@@ -1,0 +1,3 @@
+Na pocetnoj stranici za kategorije napraviti ispis kategorija koje su vezane za trenutno logiranog korisnika.
+
+Napraviti sortiranje po datumu za kategorije.

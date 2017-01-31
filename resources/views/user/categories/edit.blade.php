@@ -29,7 +29,7 @@
 				</div>
 			</div>
 			<div class="panel-body">
-			<form action="/user/categories" method="POST">
+			<form action="{{ route('categories.update', $categories->id) }}" method="POST">
 			
 			<div class="form-group">
 			
@@ -37,7 +37,7 @@
       
 	        <select class="form-control" name="sections_id">
 			@foreach($sections as $section)
-            			<option value="{{ $section->id }}" {{ $categories->section_id==$section->id ? 'selected': null }}>{{ $section->name }}</option>
+            			<option value="{{ $section->id }}" {{ $categories->sections_id==$section->id ? 'selected': null }}>{{ $section->name }}</option>
 			@endforeach
                </select>
 	       </div>
@@ -50,7 +50,7 @@
 		   		  
 			
 			</div>
-			<input type="hidden" name="_method" value="PUT">
+				<input type="hidden" name="_method" value="PUT">
 				<input type="hidden" name="_token" value="{{ csrf_token() }}" />
 				<button type="submit" class="btn btn-default">Save</button>
 			</form>

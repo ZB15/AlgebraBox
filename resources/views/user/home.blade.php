@@ -107,20 +107,15 @@
 			
 			
 			<div class="panel-body">
-<<<<<<< HEAD
-<<<<<<< HEAD
 				<ul>
 
 				</ul>
-=======
 				<div id="user-file">
 					<label class="checkbox-inline"><input type="checkbox" value="">
-=======
 			<div class="clearfix loop-inner">
 				<div class="col-md-4 ">
 					<p>
 						<label class="checkbox-inline"><input type="checkbox" value="">
->>>>>>> 9e8a317f09a93fd3ac407b010c3ac5640ed6b42f
 						<span class="float-left">Name</span>
 						<span class="float-right">Type</span>
 						</label>
@@ -137,9 +132,7 @@
 							
 							
 						
-					
-				
-<<<<<<< HEAD
+		
 				<div id="user-file">
 					<label class="checkbox-inline"><input type="checkbox" value="">
 						<span class="float-left">Name</span>
@@ -148,11 +141,7 @@
 						<span class="float-right">Date created</span>
 					</label>
 				</div>
->>>>>>> c9908752499ed7431b9e3d84009ef9bcd9508bcf
-=======
 			</div>	
-
->>>>>>> 9e8a317f09a93fd3ac407b010c3ac5640ed6b42f
 			</div>
 		</div>
 	</div>

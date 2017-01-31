@@ -4,11 +4,14 @@ namespace App\Http\Controllers\Admin;
 
 use Mail;
 use Sentinel;
+Use Hash;
+Use File;
 use App\Http\Requests;
 use Centaur\AuthManager;
 use Illuminate\Http\Request;
 use Cartalyst\Sentinel\Users\IlluminateUserRepository;
 use App\Http\Controllers\Controller;
+use App\Models\UserMap;
 
 class UserController extends Controller
 {
@@ -107,7 +110,22 @@ class UserController extends Controller
                 $role->users()->attach($result->user);
             }
         }
-
+		
+		// Kreira root mapu za svakog korisnika prilikom registracije
+		
+		$hashedMap = Hash::make('$result->user->id');
+		
+		File::makeDirectory(storage_path("app/maps/user_$hashedMap"), 0755, true, true);
+		
+		// Pospremi id korisnika i ime mape u bazu
+		
+		$map = new UserMap();
+		
+		$map->name = $hashedMap;
+		$map->users_id = $result->user->id;
+		
+		$map->save();
+		
         $result->setMessage("User {$request->get('email')} has been created.");
         return $result->dispatch(route('users.index'));
     }

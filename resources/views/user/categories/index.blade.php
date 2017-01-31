@@ -11,12 +11,12 @@
 
 
 <div class="row">
-<<<<<<< HEAD
+
   <ol class="breadcrumb">
     <li class="active">Home</li>
   </ol>
   
-=======
+
 
 	<ol class="breadcrumb">
 		<li><a href="{{route('home')}}">Home</a></li>
@@ -36,7 +36,7 @@
 	
 	</ol>
 
->>>>>>> 9e8a317f09a93fd3ac407b010c3ac5640ed6b42f
+
 </div>
 
 
@@ -49,7 +49,7 @@
 		</div>	
 	</div>
 	<div class="col-md-9">
-<<<<<<< HEAD
+
 		<div class="panel panel-default">
 			<div class="panel-heading clearfix">
 				<h3 class="pull-left panel-title">Categories</h3>
@@ -58,9 +58,8 @@
 						<span class="pull-right glyphicon glyphicon-folder-close" aria-hidden="true"></span>
 						<span class="pull-right glyphicon glyphicon-plus" aria-hidden="true"></span>
 					</a>
-=======
+
 		<div class="panel-default">
-			<div class="clearfix">
 				
 				<div class="col-md-4 background-blue">
 						<div class="status-info">
@@ -69,18 +68,19 @@
 										<span class="caret"></span>
 									</button>
 									<ul class="dropdown-menu">
-										<li><a href="#">Date</a></li>
-										<li><a href="#">Size</a></li>
-										<li><a href="#">Type</a></li>
+										<li><a href="/user/categories?sort=date">Date</a></li>
+										<li><a href="/user/categories?sort=size">Size</a></li>
+										<li><a href="/user/categories?sort=type">Type</a></li>
 									</ul>
 								</div>
 						</div>	
->>>>>>> 9e8a317f09a93fd3ac407b010c3ac5640ed6b42f
+
 				</div>
+
 			</div>
 
 			<div class="panel-body">
-<<<<<<< HEAD
+
 				<ul>
 					@foreach ($categories as $cat)
 						<li>
@@ -88,7 +88,7 @@
 						</li>
 					@endforeach
 				</ul>
-=======
+
 				<table class="table table-striped">
     <thead>
       <tr>
@@ -108,7 +108,7 @@
       <tr>
         <td>{{ $category->id }}</td>
 		 <td>{{ $category->name }}</td>
-		  <td>{{ $category->sections->name }}</td>
+		  <td>{{ $category->name }}</td>
 		  <td>
 		  <a href="{{ route('categories.edit', $category->id) }}"><span class="label label-success">Edit</span></a>
 		  </td>
@@ -129,11 +129,9 @@
   </table>
 			<div>
 
-				
-<<<<<<< HEAD
->>>>>>> c9908752499ed7431b9e3d84009ef9bcd9508bcf
+
 			</div>
-=======
+
 				<div class="col-md-4 background-orange">
 						<div class="status-info">
 								<div class="dropdown">
@@ -178,21 +176,21 @@
 				<div class="clearfix loop-names">
 					<div class="col-md-4">
 						<div class="status-info">
-								<h5 class="blue">ID</h5>
+								<h5 class="blue">ID & Category name</h5>
 						</div>	
 					</div>
 							
 					<div class="col-md-4">
 						<div class="status-info">
-							<h5 class="orange">Category name</h5>
+							<h5 class="orange">Section</h5>
 						</div>	
 					</div>
 							  
 					<div class="col-md-4">
 						<div class="status-info">
-							<h5 class="green">Section</h5>
+							<h5 class="green">Option</h5>
 						</div>	
-					</div>	
+					</div>
 				</div>
 				
 				<div class="inner-loop">	
@@ -203,7 +201,7 @@
 					<div class="clearfix loop-inner">
 					<div class="col-md-4">
 						<div class="loop-categories">
-							<p>{{ $category->id }}</p>
+							<p>{{ $category->id }}. {{ $category->name }}</p>
 						</div>	
 					</div>
 							
@@ -216,8 +214,8 @@
 					<div class="col-md-4">
 						<div class="loop-categories">
 							<p class="btn-edit">
-								<a class="btn background-blue" href="#" role="button">Edit</a>
-								<a class="btn background-orange" href="#" role="button">Delete</a>
+								<a class="btn background-blue" href="{{ route('categories.edit', $category->id) }}" role="button">Edit</a>
+								<a class="btn background-orange action_confirm" href="{{ route('categories.destroy', $category->id) }}" role="button"  data-method="delete" data-token="{{ csrf_token() }}">Delete</a>
 							 </p>
 						</div>	
 					</div>	
@@ -227,7 +225,7 @@
 				@endforeach
       
 
->>>>>>> 9e8a317f09a93fd3ac407b010c3ac5640ed6b42f
+
 		</div>
 	</div>
 </div>
